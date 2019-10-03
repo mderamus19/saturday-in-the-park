@@ -4,11 +4,11 @@ import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
 
 
 const Login = props => {
-    const username = useRef()
+    const username = useRef() //similar to state but references the value in an input field that is defined in the component
     const password = useRef()
-    const { login } = useSimpleAuth()
+    const { login } = useSimpleAuth() //exports login 
 
-    // Simplistic handler for login submit
+    // Simplistic handler for login submit and prevents the form from submitting
     const handleLogin = (e) => {
         e.preventDefault()
 
@@ -35,14 +35,14 @@ const Login = props => {
                 <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <fieldset>
                     <label htmlFor="inputEmail"> Email address </label>
-                    <input ref={username} type="username"
+                    <input ref={username} type="username"//tied to const username in const Login
                         className="form-control"
                         placeholder="Email address"
                         required autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="inputPassword"> Password </label>
-                    <input ref={password} type="password"
+                    <input ref={password} type="password" //refers to the useRef above
                         id="password"
                         className="form-control"
                         placeholder="Password"
